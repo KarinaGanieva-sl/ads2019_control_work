@@ -83,6 +83,12 @@
 		<Unit filename="C:/Users/User/Desktop/c++ projects/saveme/src/main.cpp">
 			<Option target="saveme"/>
 		</Unit>
+		<Unit filename="C:/Users/User/Desktop/c++ projects/saveme/src/my_list.cpp">
+			<Option target="saveme"/>
+		</Unit>
+		<Unit filename="C:/Users/User/Desktop/c++ projects/saveme/src/my_list.h">
+			<Option target="saveme"/>
+		</Unit>
 		<Unit filename="C:/Users/User/Desktop/c++ projects/saveme/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

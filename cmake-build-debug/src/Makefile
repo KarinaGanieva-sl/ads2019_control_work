@@ -151,6 +151,33 @@ main.cpp.s:
 	cd /d C:\Users\User\Desktop\C__PRO~1\saveme\CMAKE-~1 && $(MAKE) -f src\CMakeFiles\saveme.dir\build.make src/CMakeFiles/saveme.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+my_list.obj: my_list.cpp.obj
+
+.PHONY : my_list.obj
+
+# target to build an object file
+my_list.cpp.obj:
+	cd /d C:\Users\User\Desktop\C__PRO~1\saveme\CMAKE-~1 && $(MAKE) -f src\CMakeFiles\saveme.dir\build.make src/CMakeFiles/saveme.dir/my_list.cpp.obj
+.PHONY : my_list.cpp.obj
+
+my_list.i: my_list.cpp.i
+
+.PHONY : my_list.i
+
+# target to preprocess a source file
+my_list.cpp.i:
+	cd /d C:\Users\User\Desktop\C__PRO~1\saveme\CMAKE-~1 && $(MAKE) -f src\CMakeFiles\saveme.dir\build.make src/CMakeFiles/saveme.dir/my_list.cpp.i
+.PHONY : my_list.cpp.i
+
+my_list.s: my_list.cpp.s
+
+.PHONY : my_list.s
+
+# target to generate assembly for a file
+my_list.cpp.s:
+	cd /d C:\Users\User\Desktop\C__PRO~1\saveme\CMAKE-~1 && $(MAKE) -f src\CMakeFiles\saveme.dir\build.make src/CMakeFiles/saveme.dir/my_list.cpp.s
+.PHONY : my_list.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -163,6 +190,9 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... my_list.obj
+	@echo ... my_list.i
+	@echo ... my_list.s
 .PHONY : help
 
 
