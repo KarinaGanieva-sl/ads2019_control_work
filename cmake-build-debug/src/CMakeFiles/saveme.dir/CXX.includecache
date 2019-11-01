@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/User/Desktop/c++ projects/saveme/src/my_list.cpp
+my_list.h
+C:/Users/User/Desktop/c++ projects/saveme/src/my_list.h
+ctime
+-
+iostream
+-
+
+C:/Users/User/Desktop/c++ projects/saveme/src/my_list.h
+
