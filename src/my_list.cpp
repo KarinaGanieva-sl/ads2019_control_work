@@ -1,11 +1,16 @@
 #include "my_list.h"
-//#include "stdafx.h"
+//#include "stdafx.h
+#include <ctime>
 #include <iostream>
 
 using namespace std;
 
 namespace xi {
-
+    int randInt(int a, int b)
+    {
+        srand( time(0) );
+        return rand() % (b-a + 1) + a;
+    }
     Node::Node(int value)
     {
         _value = value;
@@ -19,53 +24,64 @@ namespace xi {
     {
         return _head == nullptr;
     }
-    void List::add(int value)
+
+    void List::createList(int length)
     {
-        Node* node = new Node(value);
-        if(isEmpty())
-            _head = node;
-        else
-            _tail->_next = node;
-        _tail = node;
+        _length = length;
+        Node* node = new Node(randInt(0,50));
+        _head = node;
+        for(int i = 2; i <= length; i++)
+        {
+            Node* now = new Node(randInt(0,50));
+            node->_next = now;
+            node = now;
+        }
+        node->_next = _head;
+    }
+    void List::printList(Node* head)
+    {
+        Node* con = head;
+        while(head != nullptr)
+        {
+            cout << head->_value << " ";
+            head = head->_next;
+            if(head == con)
+                return;
+        }
     }
     void List::print()
     {
-        cout<<rand()%4;
-        if(isEmpty())
-            std::cout<<"empty\n";
-        Node* now = _head;
-        while(now != nullptr)
+        Node* node = _head;
+        while(node != nullptr)
         {
-            cout<<now->_value<<"->";
-            now = now->_next;
+            cout << node->_value << "->";
+            node = node->_next;
+            if(node == _head)
+                return;
         }
-        cout<<"\n";
+        cout<<"Исходный связный циклический список имеет SP( L = "<<_length<<" имеет вид:"<<"\n";
+        printList(_head);
+        split();
+        cout<<"Список SP1: ";
+        printList(_head1);
+        cout<<"Список SP2: ";
+        printList(_head2);
     }
-    Node* List::findByValue(int value)
+    Node* List::search(int index)
     {
-        if(isEmpty())
-            return nullptr;
-        Node* now = _head;
-        while(now != nullptr)
-        {
-            if(now->_value == value || now == nullptr)
-                return now;
-            now = now->_next;
+        Node* node = _head;
+        for(int i = 2; i <= index; i++){
+            node = node->_next;
         }
+        return node;
     }
-    void List::insertByValue(int value, Node* node)
+    void List::split()
     {
-        if(isEmpty())
-            return;
-        Node* now = findByValue(value);
-        if(now == nullptr)
-            return;
-        node->_next = now->_next;
-        now->_next = node;
-    }
-    void List::deleteByValue(int value)
-    {
-        Node* node = findByValue(value);
-
+        int len = _length % 2 + _length / 2;
+        _head1 = _head;
+        search(len)->_next = _head1;
+        _head2 = search(len + 1);
+        search(_length)->_next = _head2;
+        _head = nullptr;
     }
 } // namespace xi

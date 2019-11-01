@@ -1,13 +1,13 @@
 namespace xi {
 
 
-/** Declares a stack of integers.
+/** вар 4
  */
     class Node {
 
     public:
         // Constructors
-        Node(int value);           ///< Default constructor
+        Node(int value);           ///<  constructor
 
 
     public:
@@ -23,14 +23,17 @@ namespace xi {
 
     public:
         void add(int value);
-        bool isEmpty();
-        Node* findByValue(int value);
-        void insertByValue(int value, Node* node);
-        void deleteByValue(int value);
         void print();
+        bool isEmpty();
+        void createList(int length);
+        void split();
+        void printList(Node* head);
+        Node* search(int index);
     public:
         Node* _head;
-        Node* _tail;
+        Node* _head1;
+        Node* _head2;
+        int _length;
     };
 
 } // namespace xi
