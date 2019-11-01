@@ -6,14 +6,6 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/User/Desktop/c++ projects/saveme/src/main.cpp
-iostream
--
-ctime
--
-my_list.h
-C:/Users/User/Desktop/c++ projects/saveme/src/my_list.h
-
 C:/Users/User/Desktop/c++ projects/saveme/src/my_list.cpp
 my_list.h
 C:/Users/User/Desktop/c++ projects/saveme/src/my_list.h

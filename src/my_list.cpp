@@ -28,6 +28,7 @@ namespace xi {
     void List::createList(int length)
     {
         _length = length;
+        srand( time(0) );
         Node* node = new Node(randInt(0,50));
         _head = node;
         for(int i = 2; i <= length; i++)
@@ -48,17 +49,10 @@ namespace xi {
             if(head == con)
                 return;
         }
+        cout<<"\n";
     }
     void List::print()
     {
-        Node* node = _head;
-        while(node != nullptr)
-        {
-            cout << node->_value << "->";
-            node = node->_next;
-            if(node == _head)
-                return;
-        }
         cout<<"Исходный связный циклический список имеет SP( L = "<<_length<<" имеет вид:"<<"\n";
         printList(_head);
         split();
